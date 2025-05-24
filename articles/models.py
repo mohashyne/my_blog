@@ -10,3 +10,7 @@ class  Article(models.Model):
     # TODO
     # add in thumbnail
     # add author
+
+
+    def __str__(self):
+        return self.title
