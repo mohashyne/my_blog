@@ -3,14 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Article List</title>
+    <style>
+        li {
+        list-style-type: none;
+        }
+
+        ul a {
+               color:  crimson;
+        }
+    </style>
 </head>
 <body>
-<h2>Article List</h2>
+<h1>Article List</h1>
+<div class="articles">
+{% for article in articles %}
 <ul>
-    <li>Article 1</li>
-    <li>Article 2</li>
-    <li>Article 3</li>
-    <li>Article 4</li>
+    <a href="http://"><h2>{{ article.title }}</h2></a>
+    <li>{{ article.date }}</li>
 </ul>
+{% endfor %}
+</div>
 </body>
 </html>
