@@ -19,6 +19,7 @@
 {% for article in articles %}
 <ul>
     <a href="http://"><h2>{{ article.title }}</h2></a>
+    <p>{{ article.body }}</p>
     <li>{{ article.date }}</li>
 </ul>
 {% endfor %}
