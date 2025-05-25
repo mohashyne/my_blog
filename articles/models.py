@@ -11,6 +11,8 @@ class  Article(models.Model):
     # add in thumbnail
     # add author
 
-
     def __str__(self):
         return self.title
+
+    def snippet(self):
+        return f'{self.body[:50]}....'
