@@ -1,14 +1,6 @@
-{% load static %}
+{% extends 'base_layout.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Article List</title>
-<!--    <link rel="stylesheet" href="/static/styles.css">-->
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
-</head>
-<body>
+{% block content %}
 <h1>Article List</h1>
 <div class="articles">
     {% for article in articles %}
@@ -65,5 +57,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-</body>
-</html>
+
+{% endblock %}

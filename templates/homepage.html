@@ -1,23 +1,6 @@
-{% load static %}
+{% extends 'base_layout.html' %}
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Homepage</title>
-    <link rel="stylesheet" href="{% static 'homepage.css' %}">
-</head>
-<body>
-<header>
-    <h1>My Blog</h1>
-    <nav>
-        <ul>
-            <a href="http://"><li>Home</li> </a>
-            <a href="http://"><li>About</li></a>
-            <a href="http://"> <li>Contact</li></a>
-        </ul>
-    </nav>
-</header>
-</body>
-</html>
+
+{% block content %}
+{% endblock  %}

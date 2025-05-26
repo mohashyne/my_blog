@@ -9,6 +9,12 @@ body *{
     font-family: Ubuntu;
 }
 
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
 li {
     list-style-type: none;
     color: #666;
