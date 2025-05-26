@@ -3,26 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <title>Article List</title>
-    <style>
-        li {
-        list-style-type: none;
-        }
-
-        ul a {
-               color:  crimson;
-        }
-    </style>
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
 <h1>Article List</h1>
 <div class="articles">
-{% for article in articles %}
-<ul>
+    {% for article in articles %}
+   <div class="article-card">
     <a href="http://"><h2>{{ article.title }}</h2></a>
+    <canvas class="article-cover" width="300" height="200"></canvas>
     <p>{{ article.snippet }}</p>
     <li>{{ article.date }}</li>
-</ul>
-{% endfor %}
 </div>
+    {% endfor %}
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const canvases = document.querySelectorAll('.article-cover');
+    const codeSnippets = [
+        "def hello_world():\n    print('Hello, World!')",
+        "function debounce(fn, delay) {\n  let timeout;\n  return (...args) => {\n    clearTimeout(timeout);\n    timeout = setTimeout(() => fn(...args), delay);\n  };\n}",
+        "class Car {\n  constructor(brand) {\n    this.brand = brand;\n  }\n  showBrand() {\n    console.log(this.brand);\n  }\n}",
+        "#[derive(Debug)]\nstruct User {\n    name: String,\n    age: u32,\n}",
+        "SELECT * FROM users\nWHERE status = 'active'\nORDER BY created_at DESC;"
+    ];
+
+    canvases.forEach((canvas, index) => {
+        const ctx = canvas.getContext('2d');
+        const title = document.querySelectorAll('h2')[index].textContent;
+
+        // Dark coding-themed background
+        ctx.fillStyle = '#1e1e1e';  // VS Code dark theme color
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Add code snippet
+        ctx.fillStyle = '#d4d4d4';  // Light gray text
+        ctx.font = '14px Consolas, monospace';
+        ctx.textAlign = 'left';
+
+        const snippet = codeSnippets[index % codeSnippets.length];
+        snippet.split('\n').forEach((line, i) => {
+            ctx.fillText(line, 20, 40 + i * 20);
+        });
+
+        // Add title overlay (semi-transparent)
+        ctx.fillStyle = 'rgba(30, 30, 30, 0.7)';
+        ctx.fillRect(0, canvas.height - 50, canvas.width, 50);
+
+        ctx.fillStyle = 'gold';
+        ctx.font = 'bold 18px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText(title, canvas.width/2, canvas.height - 25);
+
+        // Add subtle syntax highlighting
+        ctx.fillStyle = '#569cd6';  // Blue for keywords
+        ctx.fillText('>>>', 10, 30);
+    });
+});
+</script>
 </body>
 </html>
