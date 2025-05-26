@@ -13,8 +13,7 @@ def article_list(request):
 
 
 def article_details(request, slug):
-    articles_details = Article.slug
-    return render(request, 'articles/article_details.html', {'articles_details': articles_details})
+    return render(request, 'articles/article_details.html')
 
 
 
