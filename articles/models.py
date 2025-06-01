@@ -1,3 +1,5 @@
+from email.policy import default
+
 from django.db import models
 
 # Create your models here.
@@ -6,9 +8,9 @@ class  Article(models.Model):
     slug = models.SlugField()
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
+    thumb = models.ImageField(default='default_pic.jpg', blank=True)
 
     # TODO
-    # add in thumbnail
     # add author
 
     def __str__(self):
