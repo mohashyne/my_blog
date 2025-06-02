@@ -75,3 +75,95 @@ p {
     transform: translateY(-5px);
 }
 
+
+/* FORM */
+
+.site-form {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.site-form h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.site-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.site-form input[type="text"],
+.site-form input[type="email"],
+.site-form input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 1.2rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.site-form input[type="text"]:focus,
+.site-form input[type="email"]:focus,
+.site-form input[type="password"]:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    outline: none;
+}
+
+.site-form input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.site-form input[type="submit"]:hover {
+    background: #2980b9;
+}
+
+/* Error message styling */
+.site-form .errorlist {
+    color: #e74c3c;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    list-style-type: none;
+}
+
+.site-form .errorlist li {
+    margin-bottom: 0.3rem;
+    font-size: 0.85rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .site-form {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .site-form h1 {
+        font-size: 1.5rem;
+    }
+}
