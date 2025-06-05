@@ -1,6 +1,4 @@
 from django.urls import path
-
-from articles.urls import app_name, urlpatterns
 from . import views
 
 
